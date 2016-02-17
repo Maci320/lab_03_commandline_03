@@ -17,16 +17,16 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 
 What command did you use, and what was its output?
 ----------
+date
 
-
-
+Wed Feb 17 12:17:00 EST 2016
 ==========
 2. Print out a calendar for this month.
 
 What command did you use, and what was its output?
 ----------
 
-
+cal 2016, the calendar for this year
 
 ==========
 3. Go to your home directory.  Verify that you're in your home directory.
@@ -34,7 +34,7 @@ What command did you use, and what was its output?
 What commands did you use to do this?
 ----------
 
-
+cd ~ and then pwd
 
 ==========
 4. Create an empty file called copy_to_backup.sh.  Verify that the file exists.
@@ -42,23 +42,27 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
+touch 
 
+and then ls 
 
 ==========
 5. What are the permissions on your copy_to_backup.sh.
 
 What command did you use to find the permissions?
 ----------
+ls -l
 
-
-
+read and write
 ==========
 6. Change the permissions so that this file is executable by the user.  Verify the new permissions.
 
 What commands did you use to do this?  What was the output?
 ----------
 
+chmod u+x 
 
+-rwxr--r--  1 student  staff  0 Feb 17 12:19 copy_to_backup.sh
 
 ==========
 7. Try executing the file!
@@ -68,38 +72,45 @@ $ ./copy_to_backup.sh
 What command did you use to try to execute the file?  What happens?
 ----------
 
-
+nothing?
 
 ==========
 8. Open the file with nano
 
 What command did you use to do this?
 ----------
-
-
+nano copy_to_backup.sh
 
 ==========
-9. In your file, write the following commands:
+9. In your file, write the commands to do the following
 
-a. create a directory called backup in your home directory... use the -p flag!
-b. copy all of the files txt files in the current directory to the backup directory (use *.txt)
+a. create a directory called backup 
+b. copy all of the txt files in the current directory to the backup directory (use *.txt)
 c. print out "I'm done backing up"
+
+Don't forget the first line of your shell script! It should begin with #!/bin/bash)!
 
 Write out the code in your file below...
 ----------
 
-
+#!/bin/bash
+mkdir backup
+cp *.txt backup
+echo "I'm done backing up"
 
 ==========
 10. Create a directory in your home called test
 ----------
+
+
+
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
 
 What commands did you use to do this?
 ----------
 
-
+touch
 
 ==========
 12. Move the script that you created into this directory.
@@ -107,7 +118,7 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+mv
 
 ==========
 13. Run your script.
@@ -115,10 +126,11 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+./
 
 ==========
-14. Verify that a backup folder was created in your home directory... with copies of the files present.
+14. Verify that a backup folder was created in your test directory... with copies of the files present.
 
 What commands did you use to do this?  Show the output.
 ----------
+ls
